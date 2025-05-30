@@ -9,25 +9,19 @@ The Yang-Zhang volatility estimator combines three components:
 
 The Yang-Zhang volatility combines overnight, open-to-close, and Rogers-Satchell estimators:
 
-\[
-\sigma^2_{\text{YZ}} = \sigma^2_o + k \cdot \sigma^2_c + (1 - k) \cdot \sigma^2_{rs}
-\]
+![equation](https://latex.codecogs.com/svg.image?\[\sigma^2_{\text{YZ}}=\sigma^2_o&plus;k\cdot\sigma^2_c&plus;(1-k)\cdot\sigma^2_{rs}\])
 
 Where:
 
-- \( \sigma^2_o \) = variance of **overnight returns** (log(Open) - log(Previous Close))
-- \( \sigma^2_c \) = variance of **open-to-close returns** (log(Close) - log(Open))
-- \( \sigma^2_{rs} \) = **Rogers-Satchell estimator**:
+- ![equation](https://latex.codecogs.com/svg.image?\(\sigma^2_o\)=) variance of **overnight returns** ![equation](https://latex.codecogs.com/svg.image?(log(Open)-log(Previous&space;Close)))
+- ![equation](https://latex.codecogs.com/svg.image?\(\sigma^2_c\)=)variance of **open-to-close returns** ![equation](https://latex.codecogs.com/svg.image?(log(Close)-log(Open)))
+- ![equation](https://latex.codecogs.com/svg.image?\(\sigma^2_{rs}\)=) **Rogers-Satchell estimator**:
 
-\[
-\sigma^2_{rs} = \frac{1}{n} \sum_{i=1}^{n} \left[ \ln\left(\frac{H_i}{O_i}\right) \cdot \ln\left(\frac{H_i}{C_i}\right) + \ln\left(\frac{L_i}{O_i}\right) \cdot \ln\left(\frac{L_i}{C_i}\right) \right]
-\]
+![equation](https://latex.codecogs.com/svg.image?\[\sigma^2_{rs}=\frac{1}{n}\sum_{i=1}^{n}\left[\ln\left(\frac{H_i}{O_i}\right)\cdot\ln\left(\frac{H_i}{C_i}\right)&plus;\ln\left(\frac{L_i}{O_i}\right)\cdot\ln\left(\frac{L_i}{C_i}\right)\right]\])
 
-- \( k = \frac{0.34}{1.34 + \frac{n+1}{n-1}} \)
-- \( n \) = number of observations (days)
+- ![equation](https://latex.codecogs.com/svg.image?\(k=\frac{0.34}{1.34&plus;\frac{n&plus;1}{n-1}}\))
+- ![equation](https://latex.codecogs.com/svg.image?\(n\)=number&space;of&space;observations(days))
 
 The final Yang-Zhang volatility is:
 
-\[
-\sigma_{\text{YZ}} = \sqrt{\sigma^2_{\text{YZ}}}
-\]
+![equation](https://latex.codecogs.com/svg.image?\[\sigma_{\text{YZ}}=\sqrt{\sigma^2_{\text{YZ}}}\])
